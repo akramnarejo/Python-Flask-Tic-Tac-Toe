@@ -50,24 +50,23 @@ def winnerFound(board):
 	print("here at winner")
 	#check rows
 	for i in range(len(board)):
-		if(board[i][0] == None):
-			break
-		if (board[i][0] == board[i][1] and  board[i][0] == board[i][2]):
-			return [True, board[i][0]]
+		if (board[i][0] == board[i][1] == board[i][2]):
+			if(board[i][0] != None):
+				return [True, board[i][0]]
 	#check cols
 	for i in range(len(board)):
-		if(board[0][i] == None):
-			break
-		if (board[0][i] == board[1][i] and board[0][i] == board[2][i]):
-			return [True, board[0][1]]
+		if (board[0][i] == board[1][i] == board[2][i]):
+			if(board[0][i] != None):
+				return [True, board[0][i]]
+
 	#check diagonals
-	if(board[0][0] == board[1][1] and board[0][0] == board[2][2]):
+	if(board[0][0] == board[1][1] == board[2][2]):
 		if(board[0][0] != None):
 			return [True, board[0][0]]
 	#check diagonals
-	if(board[2][0] == board[1][1] and board[2][0] == board[0][2]):
+	if(board[2][0] == board[1][1] == board[0][2]):
 		if(board[2][0] != None):
-			return [True, board[0][0]]
+			return [True, board[2][0]]
 	#check if game is drawn
 	for i in range(len(board)):
 		for j in range(len(board)):
